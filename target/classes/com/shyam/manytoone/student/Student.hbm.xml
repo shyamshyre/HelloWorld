@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.shyam.manytoone.student.Student" table="STUDENT">
+	<meta attribute="class-description">
+	This class contains the Student details.
+	</meta>
+	<id name="student_id" type="long" column="STUDENT_ID">
+		<generator class="identity"/>
+	</id>
+	<property name="student_name" type="string" column="STUDENT_NAME" not-null="true" />
+	<many-to-one name="address" class="com.shyam.manytoone.Address" column="STUDENT_ADDRESS" cascade="all" not-null="true">
+	    
+	</many-to-one>
+	
+</class>
+
+</hibernate-mapping>
